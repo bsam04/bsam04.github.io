@@ -3,18 +3,92 @@
   <head>
     <meta charset="utf-8" />
     <title>bsam04's Github Page</title>
-    <style media="screen">
-      body {
-        text-align: center;
-      }
-    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>HEading here</h1>
-    <h2>Second header</h2>
+  <body id="body">
+    <div class="container">
+      <div class="container">
+        <div class="container">
+          <div class="w-50 landing-container">
+            <h1 class="main-title">
+              Where the world builds software and heere
+            </h1>
+            <p>
+              Millions of developers and companies build, ship, and maintain
+              their software on GitHub—the largest and most advanced development
+              platform in the world.
+            </p>
+            <div class="d-flex pe-5">
+              <div class="d-inline-flex">
+                <input
+                  class="form-control d-inline-flex me-2 pe-5 ps-4"
+                  type="email"
+                  placeholder="Email address"
+                  aria-label="Email address"
+                />
+              </div>
+              <button class="btn text-light green py-2 px-4" type="submit">
+                <b>Sign up for Github</b>
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div class="d-flex flex-row">
+            <div class="pe-5"><h2>83+ million</h2></div>
+            <div class="px-5"><h2>4+ million</h2></div>
+            <div class="px-5"><h2>200+ million</h2></div>
+            <div class="px-5"><h2>90%</h2></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <hr />
-    <p>This is a paragraph</p>
-    <hr />
-    <p>This is also a paragraph</p>
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Rio.jpg" class="d-block w-100" alt="HAY" />
+        </div>
+        <div class="carousel-item">
+          <img src="Shanghai.jpg" class="d-block w-100" alt="YO" />
+        </div>
+        <div class="carousel-item">
+          <img src="Singapore.jpg" class="d-block w-100" alt="GO" />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- https://getbootstrap.com/docs/5.2/utilities/spacing/ -->
   </body>
 </html>
