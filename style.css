@@ -1,27 +1,11 @@
 @import url("http://fonts.cdnfonts.com/css/alliance-no1");
 
-body {
+* {
   font-family: "Alliance No.1", sans-serif;
   color: white;
   background-color: black;
-  margin: 0;
-  height: 200vh;
 }
 
-.main-title {
-  font-size: 3.78vw;
-  font-weight: 800;
-}
-
-.landing-container {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-}
-
-p {
-  font-size: 1.26vw;
-}
-
-.green {
-  background-color: rgb(46, 164, 79);
+body {
+  text-align: center;
 }
