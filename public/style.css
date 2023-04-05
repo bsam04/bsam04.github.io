@@ -21,16 +21,13 @@ p {
   color: #57606a;
 }
 
-.icon-link {
-  text-decoration: none;
-}
-
-.text-black {
-  color: #000000;
-}
-
 .text-blue {
   color: #0078d4;
+}
+
+.github-icon {
+  width: 1em;
+  height: 1em;
 }
 
 @keyframes fadein {
