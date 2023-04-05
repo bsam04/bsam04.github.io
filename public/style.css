@@ -1,0 +1,43 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+div {
+  margin: 5% auto;
+  max-width: 550px;
+  animation: fadein 2.5s;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.info {
+  color: #57606a;
+}
+
+.icon-link {
+  text-decoration: none;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-blue {
+  color: #0078d4;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
