@@ -33,6 +33,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      # Convert github.event.repository.pushed_at from a unix timestamp to %Y-%m-%d format
+      # Set the resulting date as an environment variable
+      - name: Set env.pushed_at_ymd
+        run: echo "pushed_at_ymd=$(date -d @${{ github.event.repository.pushed_at }} +'%Y-%m-%d')" >> $GITHUB_ENV
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v3
+        id: find-replace
+        with:
+          # Replace the placeholder with env.pushed_at_ymd
+          find: "_LAST_PUSHED_AT_DATE"
+          replace: ${{ env.pushed_at_ymd }}
+          include: "public/index.html"
+          regex: false
+      - name: Echo the number of files Find and Replace affected
+        run: echo "Find and Replace affected ${{ steps.find-replace.outputs.modifiedFiles }} file(s)."
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
