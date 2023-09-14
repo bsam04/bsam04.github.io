@@ -40,35 +40,33 @@ export default function Projects() {
       <div className="grid grid-cols-3 gap-6">
         {projects.map((project, index) => {
           return (
-            <>
-              <Card key={index}>
-                <CardHeader>
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                </CardHeader>
-                <Divider />
-                <CardBody>
-                  <div>
-                    <Image
-                      className="w-full object-cover max-h-[320px]"
-                      width="100%"
-                      radius="sm"
-                      src={project.image}
-                      alt={project.title}
-                    />
-                  </div>
-                  <Divider className="my-3" />
-                  {project.description}
-                </CardBody>
-                <Divider />
-                <CardFooter>
-                  <div className="flex gap-3">
-                    {project.keywords.map((keyword, index) => {
-                      return <Chip key={index}>{keyword}</Chip>;
-                    })}
-                  </div>
-                </CardFooter>
-              </Card>
-            </>
+            <Card key={index}>
+              <CardHeader>
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+              </CardHeader>
+              <Divider />
+              <CardBody className="max-h-[32rem]">
+                <div>
+                  <Image
+                    className="w-full object-cover max-h-[320px]"
+                    width="100%"
+                    radius="sm"
+                    src={project.image}
+                    alt={project.title}
+                  />
+                </div>
+                <Divider className="my-3" />
+                <div className="overflow-hidden">{project.description}</div>
+              </CardBody>
+              <Divider />
+              <CardFooter>
+                <div className="flex gap-3">
+                  {project.keywords.map((keyword, index) => {
+                    return <Chip key={index}>{keyword}</Chip>;
+                  })}
+                </div>
+              </CardFooter>
+            </Card>
           );
         })}
       </div>
