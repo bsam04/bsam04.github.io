@@ -1,20 +1,16 @@
 import Footer from "@/components/Footer";
-
+import Hero from "@/components/Hero";
 export default function Home() {
   return (
-    <main>
-      <div className="min-h-screen flex flex-col p-5">
-        {/* Main Content */}
-        <div className="grow">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold">Benjamin Sam</h1>
-          </div>
+    <div className="min-h-screen flex flex-col p-5">
+      {/* Main Content */}
+      <main className="grow container mx-auto px-6">
+        <div className="flex flex-col items-center">
+          <Hero />
         </div>
-        {/* Footer */}
-        <div>
-          <Footer />
-        </div>
-      </div>
-    </main>
+      </main>
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
