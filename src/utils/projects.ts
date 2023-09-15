@@ -17,6 +17,10 @@ type matterResultType = {
   content: string;
   data: projectMetadataType;
 };
+export type projectDataType = projectMetadataType & {
+  slug: string;
+  contentHtml: string;
+};
 
 export function getAllProjectSlugs() {
   const fileNames = fs.readdirSync(projectsDirectory);
@@ -27,7 +31,7 @@ export function getAllProjectSlugs() {
   });
 }
 
-export async function getProjectData(slug: string) {
+export async function getProjectData(slug: string): Promise<projectDataType> {
   const fullPath = path.join(projectsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

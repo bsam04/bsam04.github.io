@@ -2,6 +2,11 @@ import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { Chip } from "@nextui-org/chip";
 import { Divider } from "@nextui-org/divider";
 import { Image } from "@nextui-org/image";
+import {
+  getAllProjectSlugs,
+  getProjectData,
+  projectDataType,
+} from "@/utils/projects";
 
 const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
@@ -33,11 +38,54 @@ const projects = [
   },
 ];
 
-export default function Projects() {
+function ProjectCard({ projectData }: { projectData: projectDataType }) {
+  return (
+    <Card>
+      <CardHeader>
+        <h3 className="text-xl font-semibold">{projectData.title}</h3>
+      </CardHeader>
+      <Divider />
+      <CardBody className="max-h-[32rem]">
+        <div>
+          <Image
+            className="w-full object-cover max-h-[320px]"
+            width="100%"
+            radius="sm"
+            src={projectData.image}
+            alt={projectData.title}
+          />
+        </div>
+        <Divider className="my-3" />
+        <div
+          className="project-html line-clamp-6"
+          dangerouslySetInnerHTML={{ __html: projectData.contentHtml }}
+        />
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <div className="flex gap-3">
+          {projectData.keywords.map((keyword, index) => {
+            return <Chip key={index}>{keyword}</Chip>;
+          })}
+        </div>
+      </CardFooter>
+    </Card>
+  );
+}
+
+export default async function Projects() {
+  const projectSlugs = getAllProjectSlugs();
+  const projectData = await Promise.all(
+    projectSlugs.map(async (project) => await getProjectData(project.slug))
+  );
+
   return (
     <section>
       <h3 className="text-4xl font-bold mb-6">Projects</h3>
       <div className="grid grid-cols-3 gap-6">
+        {projectData.map((data, index) => {
+          return <ProjectCard key={index} projectData={data} />;
+        })}
         {projects.map((project, index) => {
           return (
             <Card key={index}>
