@@ -7,69 +7,42 @@ import {
   getProjectData,
   projectDataType,
 } from "@/utils/projects";
-
-const lorem =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
-
-const projects = [
-  {
-    title: "Project Name 0",
-    image: "/images/fruit-1.jpeg",
-    description: `Project description 0. ${lorem}`,
-    keywords: ["React", "Typescript", "TailwindCSS"],
-  },
-  {
-    title: "Project Name 1",
-    image: "/images/fruit-2.jpeg",
-    description: `Project description 1. ${lorem}`,
-    keywords: ["React", "Typescript", "TailwindCSS"],
-  },
-  {
-    title: "Project Name 3",
-    image: "/images/fruit-4.jpeg",
-    description: `Project description 3. ${lorem}`,
-    keywords: ["React", "Typescript", "TailwindCSS"],
-  },
-  {
-    title: "Project Name 2",
-    image: "/images/fruit-3.jpeg",
-    description: `Project description 2. ${lorem}`,
-    keywords: ["React", "Typescript", "TailwindCSS"],
-  },
-];
+import Link from "next/link";
 
 function ProjectCard({ projectData }: { projectData: projectDataType }) {
   return (
-    <Card>
-      <CardHeader>
-        <h3 className="text-xl font-semibold">{projectData.title}</h3>
-      </CardHeader>
-      <Divider />
-      <CardBody className="max-h-[32rem]">
-        <div>
-          <Image
-            className="w-full object-cover max-h-[320px]"
-            width="100%"
-            radius="sm"
-            src={projectData.image}
-            alt={projectData.title}
+    <Link href={`/projects/${projectData.slug}`}>
+      <Card>
+        <CardHeader>
+          <h3 className="text-xl font-semibold">{projectData.title}</h3>
+        </CardHeader>
+        <Divider />
+        <CardBody className="max-h-[32rem]">
+          <div>
+            <Image
+              className="w-full object-cover max-h-[320px]"
+              width="100%"
+              radius="sm"
+              src={projectData.image}
+              alt={projectData.title}
+            />
+          </div>
+          <Divider className="my-3" />
+          <div
+            className="project-html line-clamp-6"
+            dangerouslySetInnerHTML={{ __html: projectData.contentHtml }}
           />
-        </div>
-        <Divider className="my-3" />
-        <div
-          className="project-html line-clamp-6"
-          dangerouslySetInnerHTML={{ __html: projectData.contentHtml }}
-        />
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <div className="flex gap-3">
-          {projectData.keywords.map((keyword, index) => {
-            return <Chip key={index}>{keyword}</Chip>;
-          })}
-        </div>
-      </CardFooter>
-    </Card>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <div className="flex gap-3">
+            {projectData.keywords.map((keyword, index) => {
+              return <Chip key={index}>{keyword}</Chip>;
+            })}
+          </div>
+        </CardFooter>
+      </Card>
+    </Link>
   );
 }
 
@@ -85,37 +58,6 @@ export default async function Projects() {
       <div className="grid grid-cols-3 gap-6">
         {projectData.map((data, index) => {
           return <ProjectCard key={index} projectData={data} />;
-        })}
-        {projects.map((project, index) => {
-          return (
-            <Card key={index}>
-              <CardHeader>
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-              </CardHeader>
-              <Divider />
-              <CardBody className="max-h-[32rem]">
-                <div>
-                  <Image
-                    className="w-full object-cover max-h-[320px]"
-                    width="100%"
-                    radius="sm"
-                    src={project.image}
-                    alt={project.title}
-                  />
-                </div>
-                <Divider className="my-3" />
-                <div className="overflow-hidden">{project.description}</div>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <div className="flex gap-3">
-                  {project.keywords.map((keyword, index) => {
-                    return <Chip key={index}>{keyword}</Chip>;
-                  })}
-                </div>
-              </CardFooter>
-            </Card>
-          );
         })}
       </div>
     </section>
