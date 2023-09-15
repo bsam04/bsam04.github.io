@@ -15,7 +15,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <main className="container mx-auto px-64">
-      <div className="flex flex-col gap-4 items-center">
+      <div className="flex flex-col gap-4">
         <section>
           <h3 className="text-4xl font-bold mb-6">{projectData.title}</h3>
           <div className="flex gap-3">
@@ -25,10 +25,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         </section>
         <Divider />
-        <section className="my-5">
+        <section className="flex flex-col items-center my-5">
           <Image
-            className="w-full object-cover max-h-[320px]"
-            width="100%"
+            className="max-h-[32rem]"
             radius="sm"
             src={projectData.image}
             alt={projectData.title}
