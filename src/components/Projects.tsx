@@ -46,7 +46,7 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
   );
 }
 
-const divideArray = (array: projectDataType[], n: number) => {
+const divideArray = <T,>(array: T[], n: number): T[][] => {
   const arrayCopy = [...array];
   const result = [];
   for (let i = n; i > 0; i--) {
