@@ -2,6 +2,19 @@ import { getAllProjectSlugs, getProjectData } from "@/utils/projects";
 import { Divider } from "@nextui-org/divider";
 import { Image } from "@nextui-org/image";
 import { Chip } from "@nextui-org/chip";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const projectData = await getProjectData(params.slug);
+  return {
+    title: `${projectData.title} - Benjamin Sam`,
+    description: `Benjamin Sam's ${projectData.title} project.`,
+  };
+}
 
 export const dynamicParams = false;
 

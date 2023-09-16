@@ -17,11 +17,13 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body>
         <Providers>
-          <div className="min-h-screen flex flex-col gap-8 py-10 px-5">
+          <div className="min-h-screen flex flex-col gap-8">
             {/* Main content */}
             <div className="grow">{children}</div>
             {/* Footer */}
-            <Footer />
+            <div className="mb-8 px-5">
+              <Footer />
+            </div>
           </div>
         </Providers>
       </body>
