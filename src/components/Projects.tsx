@@ -17,7 +17,7 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
           <h3 className="text-xl font-semibold">{projectData.title}</h3>
         </CardHeader>
         <Divider />
-        <CardBody className="max-h-[32rem]">
+        <CardBody>
           <div>
             <Image
               className="w-full object-cover max-h-[320px]"
@@ -46,18 +46,35 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
   );
 }
 
+const divideArray = (array: projectDataType[], n: number) => {
+  const arrayCopy = [...array];
+  const result = [];
+  for (let i = n; i > 0; i--) {
+    result.push(arrayCopy.splice(0, Math.ceil(arrayCopy.length / i)));
+  }
+  return result;
+};
+
 export default async function Projects() {
   const projectSlugs = getAllProjectSlugs();
   const projectData = await Promise.all(
     projectSlugs.map(async (project) => await getProjectData(project.slug))
   );
 
+  const dividedProjectData = divideArray(projectData, 3);
+
   return (
     <section>
       <h3 className="text-4xl font-bold mb-6">Projects</h3>
       <div className="grid grid-cols-3 gap-6">
-        {projectData.map((data, index) => {
-          return <ProjectCard key={index} projectData={data} />;
+        {dividedProjectData.map((projectDataArray, index) => {
+          return (
+            <div key={index} className="flex flex-col gap-6">
+              {projectDataArray.map((data, index) => {
+                return <ProjectCard key={index} projectData={data} />;
+              })}
+            </div>
+          );
         })}
       </div>
     </section>
