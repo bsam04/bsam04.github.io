@@ -5,7 +5,7 @@ import { Divider } from "@nextui-org/divider";
 
 export default function Home() {
   return (
-    <main className="container mx-auto ">
+    <main>
       <div className="flex flex-col items-center">
         <Hero />
         <Divider className="mb-8" />
