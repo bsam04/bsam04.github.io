@@ -4,7 +4,7 @@ import p5 from "p5";
 import TOPOLOGY from "vanta/dist/vanta.topology.min";
 
 export default function Hero() {
-  const [vantaEffect, setVantaEffect] = useState<TOPOLOGY | null>(null);
+  const [vantaEffect, setVantaEffect] = useState<typeof TOPOLOGY | null>(null);
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
