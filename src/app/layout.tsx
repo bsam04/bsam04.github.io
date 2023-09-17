@@ -21,7 +21,7 @@ export default function RootLayout({
             {/* Main content */}
             <div className="grow">{children}</div>
             {/* Footer */}
-            <div className="mb-8 px-5">
+            <div className="mb-8">
               <Footer />
             </div>
           </div>

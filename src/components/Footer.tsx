@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="px-12">
       <hr className="my-5" />
       <div className="flex justify-evenly">
         <div>

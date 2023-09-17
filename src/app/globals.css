@@ -23,3 +23,7 @@ main > a {
 .project-html > ul {
   @apply list-inside list-disc;
 }
+
+footer a {
+  text-decoration: underline;
+}
