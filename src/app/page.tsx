@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <div className="flex flex-col items-center">
         <Hero />
-        <Divider className="mb-8" />
+        <Divider className="mb-12" />
         <div className="flex flex-col gap-6 px-12">
           <About />
           <Divider className="my-6" />
