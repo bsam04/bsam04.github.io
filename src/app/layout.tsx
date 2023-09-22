@@ -6,6 +6,10 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Benjamin Sam",
   description: "Benjamin Sam's homepage.",
+  robots: {
+    // Prevent indexing by search engines
+    index: false,
+  },
 };
 
 export default function RootLayout({
