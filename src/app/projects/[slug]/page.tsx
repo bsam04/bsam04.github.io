@@ -33,7 +33,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h3 className="text-4xl font-bold mb-6">{projectData.title}</h3>
           <div className="flex gap-3">
             {projectData.keywords.map((keyword, index) => {
-              return <Chip key={index}>{keyword}</Chip>;
+              return (
+                <Chip
+                  key={index}
+                  className={`chip-skill-${keyword.toLowerCase()}`}
+                >
+                  {keyword}
+                </Chip>
+              );
             })}
           </div>
         </section>

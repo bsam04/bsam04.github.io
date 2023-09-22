@@ -1,9 +1,9 @@
 ---
-title: "Two Forms of Pre-rendering"
+title: "Quantitative AI Stock Trading Bot"
 image: "/images/fruit-4.jpeg"
 date: "2022-01-01"
 source: "https://github.com/bvsam/rnn-trader/"
-keywords: ["React", "Typescript"]
+keywords: ["Keras", "Tensorflow", "scikit-learn", "React", "Typescript"]
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

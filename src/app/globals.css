@@ -28,3 +28,35 @@ main > a {
 footer a {
   text-decoration: underline;
 }
+
+/* Styles for Chip components containing skill keywords */
+.chip-skill-php {
+  @apply bg-[#7a86b8];
+}
+.chip-skill-mysql {
+  @apply bg-gradient-to-r from-[#00758f] to-[#f29111];
+}
+.chip-skill-bootstrap {
+  @apply bg-[#712cf9];
+}
+.chip-skill-typescript {
+  @apply bg-[#3178c6];
+}
+.chip-skill-react {
+  @apply bg-[#087ea4];
+}
+.chip-skill-keras {
+  @apply bg-[#d00000];
+}
+.chip-skill-tensorflow {
+  @apply bg-[#ff6f00];
+}
+.chip-skill-scikit-learn {
+  @apply bg-gradient-to-r from-[#3499cd] to-[#f89939];
+}
+.chip-skill-redux {
+  @apply bg-[#764abc];
+}
+.chip-skill-mongodb {
+  @apply bg-gradient-to-r from-[#001e2b] to-[#00ed64];
+}

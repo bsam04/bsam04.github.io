@@ -37,7 +37,14 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
         <CardFooter>
           <div className="flex gap-3">
             {projectData.keywords.map((keyword, index) => {
-              return <Chip key={index}>{keyword}</Chip>;
+              return (
+                <Chip
+                  key={index}
+                  className={`chip-skill-${keyword.toLowerCase()}`}
+                >
+                  {keyword}
+                </Chip>
+              );
             })}
           </div>
         </CardFooter>

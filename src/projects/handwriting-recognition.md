@@ -1,9 +1,9 @@
 ---
-title: "When to Use Static Generation v.s. Server-side Rendering"
+title: "Handwriting Recognition App"
 image: "/images/fruit-3.jpeg"
 date: "2022-01-02"
 source: "https://github.com/bvsam/handwriting-recognition/"
-keywords: ["React", "Typescript"]
+keywords: ["Keras", "Tensorflow", "Bootstrap"]
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
