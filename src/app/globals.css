@@ -13,8 +13,16 @@ body {
   @apply underline-offset-4;
 }
 
-main > a {
+a {
   text-decoration: underline;
+}
+
+a:hover {
+  @apply blue-link;
+}
+
+.blue-link {
+  @apply text-[#2997ff];
 }
 
 .project-html > * {
@@ -23,10 +31,6 @@ main > a {
 
 .project-html > ul {
   @apply list-inside list-disc;
-}
-
-footer a {
-  text-decoration: underline;
 }
 
 /* Styles for Chip components containing skill keywords */

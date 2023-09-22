@@ -16,7 +16,10 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
     <Card>
       <CardHeader>
         <div className="w-full">
-          <Link href={projectLinkHref}>
+          <Link
+            href={projectLinkHref}
+            className="no-underline hover:text-inherit"
+          >
             <h3 className="text-2xl font-semibold mb-1">{projectData.title}</h3>
           </Link>
           <div className="flex gap-4">
@@ -32,7 +35,7 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
         </div>
       </CardHeader>
       <Divider />
-      <Link href={projectLinkHref}>
+      <Link href={projectLinkHref} className="no-underline hover:text-inherit">
         <CardBody>
           <div>
             <Image

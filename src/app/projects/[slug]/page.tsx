@@ -35,14 +35,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <div className="flex gap-4">
             <Link
               href={projectData.github}
-              className="text-lg text-[#0070f3] underline"
+              className="text-lg blue-link underline"
             >
               Github
             </Link>
             {projectData.demo ? (
               <Link
                 href={projectData.demo}
-                className="text-lg text-[#0070f3] underline"
+                className="text-lg blue-link underline"
               >
                 Demo
               </Link>
