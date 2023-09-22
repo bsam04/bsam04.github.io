@@ -10,13 +10,29 @@ import {
 import Link from "next/link";
 
 function ProjectCard({ projectData }: { projectData: projectDataType }) {
+  const projectLinkHref = `/projects/${projectData.slug}`;
+
   return (
-    <Link href={`/projects/${projectData.slug}`}>
-      <Card>
-        <CardHeader>
-          <h3 className="text-xl font-semibold">{projectData.title}</h3>
-        </CardHeader>
-        <Divider />
+    <Card>
+      <CardHeader>
+        <div className="w-full">
+          <Link href={projectLinkHref}>
+            <h3 className="text-2xl font-semibold mb-1">{projectData.title}</h3>
+          </Link>
+          <div className="flex gap-4">
+            <Link href={projectData.github} className="text-lg underline">
+              Github
+            </Link>
+            {projectData.demo ? (
+              <Link href={projectData.demo} className="text-lg underline">
+                Demo
+              </Link>
+            ) : null}
+          </div>
+        </div>
+      </CardHeader>
+      <Divider />
+      <Link href={projectLinkHref}>
         <CardBody>
           <div>
             <Image
@@ -48,8 +64,8 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
             })}
           </div>
         </CardFooter>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 }
 
