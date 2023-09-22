@@ -2,7 +2,7 @@
 title: "Goal Setting App"
 image: "/images/fruit-1.jpeg"
 date: "2022-01-01"
-source: "https://github.com/bvsam/rnn-trader/"
+github: "https://github.com/bvsam/mern-demo"
 keywords: ["React", "Redux", "MongoDB"]
 ---
 

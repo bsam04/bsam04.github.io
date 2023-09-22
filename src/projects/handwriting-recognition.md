@@ -2,7 +2,7 @@
 title: "Handwriting Recognition App"
 image: "/images/fruit-3.jpeg"
 date: "2022-01-02"
-source: "https://github.com/bvsam/handwriting-recognition/"
+github: "https://github.com/bvsam/handwriting-recognition"
 keywords: ["Keras", "Tensorflow", "Bootstrap"]
 ---
 

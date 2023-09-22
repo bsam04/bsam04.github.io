@@ -2,7 +2,7 @@
 title: "TUGS"
 image: "/images/fruit-2.jpeg"
 date: "2022-01-05"
-source: "https://google.com"
+github: "https://github.com/bvsam/TUGS"
 keywords: ["PHP", "MySQL", "Bootstrap"]
 ---
 

@@ -10,7 +10,7 @@ type projectMetadataType = {
   title: string;
   image: string;
   date: string;
-  source: string;
+  github: string;
   keywords: string[];
 };
 type matterResultType = {
