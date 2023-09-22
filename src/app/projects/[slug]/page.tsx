@@ -3,6 +3,7 @@ import { Divider } from "@nextui-org/divider";
 import { Image } from "@nextui-org/image";
 import { Chip } from "@nextui-org/chip";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -31,17 +32,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <div className="flex flex-col gap-4">
         <section>
           <h3 className="text-4xl font-bold mb-6">{projectData.title}</h3>
-          <div className="flex gap-3">
-            {projectData.keywords.map((keyword, index) => {
-              return (
-                <Chip
-                  key={index}
-                  className={`chip-skill-${keyword.toLowerCase()}`}
-                >
-                  {keyword}
-                </Chip>
-              );
-            })}
+          <div className="flex gap-4">
+            <Link
+              href={projectData.github}
+              className="text-lg text-[#0070f3] underline"
+            >
+              Github
+            </Link>
+            {projectData.demo ? (
+              <Link
+                href={projectData.demo}
+                className="text-lg text-[#0070f3] underline"
+              >
+                Demo
+              </Link>
+            ) : null}
           </div>
         </section>
         <Divider />
@@ -53,6 +58,19 @@ export default async function Page({ params }: { params: { slug: string } }) {
             alt={projectData.title}
           />
         </section>
+        <Divider />
+        <div className="flex gap-3 flex-wrap">
+          {projectData.keywords.map((keyword, index) => {
+            return (
+              <Chip
+                key={index}
+                className={`chip-skill-${keyword.toLowerCase()}`}
+              >
+                {keyword}
+              </Chip>
+            );
+          })}
+        </div>
         <Divider />
         <section>
           <div
