@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import p5 from "p5";
 import TOPOLOGY from "vanta/dist/vanta.topology.min";
 
 export default function Hero() {
@@ -8,6 +7,9 @@ export default function Hero() {
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
+      // Import p5 here to ensure it's only loaded once the client is ready and
+      // window is defined
+      const p5 = require("p5");
       setVantaEffect(
         TOPOLOGY({
           el: vantaRef.current,
