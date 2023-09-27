@@ -54,7 +54,7 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
         </CardBody>
         <Divider />
         <CardFooter>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap">
             {projectData.keywords.map((keyword, index) => {
               return (
                 <Chip
