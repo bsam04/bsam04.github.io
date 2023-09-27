@@ -29,55 +29,65 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <main className="container mx-auto px-6 max-w-4xl">
-      <div className="flex flex-col gap-4">
-        <section>
-          <h3 className="text-4xl font-bold mb-6">{projectData.title}</h3>
-          <div className="flex gap-4">
-            <Link
-              href={projectData.github}
-              className="text-lg blue-link underline"
-            >
-              Github
-            </Link>
-            {projectData.demo ? (
+      <div className="flex flex-row gap-3">
+        <div className="hidden sm:block h-screen sticky top-0 pt-5">
+          <Link href={"/"} className="no-underline blue-link text-4xl">
+            ←
+          </Link>
+        </div>
+        <div className="hidden sm:block h-screen sticky top-0">
+          <Divider orientation="vertical" />
+        </div>
+        <div className="flex flex-col gap-4">
+          <section>
+            <h3 className="text-4xl font-bold mb-6">{projectData.title}</h3>
+            <div className="flex gap-4">
               <Link
-                href={projectData.demo}
+                href={projectData.github}
                 className="text-lg blue-link underline"
               >
-                Demo
+                Github
               </Link>
-            ) : null}
+              {projectData.demo ? (
+                <Link
+                  href={projectData.demo}
+                  className="text-lg blue-link underline"
+                >
+                  Demo
+                </Link>
+              ) : null}
+            </div>
+          </section>
+          <Divider />
+          <section className="flex flex-col items-center my-5">
+            <Image
+              className="max-h-[32rem]"
+              radius="sm"
+              src={projectData.image}
+              alt={projectData.title}
+            />
+          </section>
+          <Divider />
+          <div className="flex gap-3 flex-wrap">
+            {projectData.keywords.map((keyword, index) => {
+              return (
+                <Chip
+                  key={index}
+                  className={`chip-skill-${keyword.toLowerCase()}`}
+                >
+                  {keyword}
+                </Chip>
+              );
+            })}
           </div>
-        </section>
-        <Divider />
-        <section className="flex flex-col items-center my-5">
-          <Image
-            className="max-h-[32rem]"
-            radius="sm"
-            src={projectData.image}
-            alt={projectData.title}
-          />
-        </section>
-        <Divider />
-        <div className="flex gap-3 flex-wrap">
-          {projectData.keywords.map((keyword, index) => {
-            return (
-              <Chip
-                key={index}
-                className={`chip-skill-${keyword.toLowerCase()}`}
-              >
-                {keyword}
-              </Chip>
-            );
-          })}
+          <Divider />
+          <section>
+            <div
+              className="project-html"
+              dangerouslySetInnerHTML={{ __html: projectData.contentHtml }}
+            />
+          </section>
         </div>
-        <Divider />
-        <section>
-          <div
-            className="project-html"
-            dangerouslySetInnerHTML={{ __html: projectData.contentHtml }}
-          />
-        </section>
       </div>
     </main>
   );
