@@ -1,23 +1,16 @@
 ---
 title: "Handwriting Recognition App"
-image: "/images/fruit-3.jpeg"
+image: "/images/handwriting-recognition.png"
 date: "2022-01-02"
 github: "https://github.com/bvsam/handwriting-recognition"
 demo: "https://bvsam.github.io/handwriting-recognition/"
 keywords: ["Keras", "Tensorflow", "Bootstrap"]
 ---
 
-We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
+A simple web app that recognizes user-drawn digits and letters.
 
-You can use Static Generation for many types of pages, including:
+Using Keras, a CNN (convolutional neural network) model was developed and trained on the EMNIST ByClass dataset, which contains pictures of letters and digits, to classify single handwritten letters and digits. The test accuracy of the trained model was 87%.
 
-- Marketing pages
-- Blog posts
-- E-commerce product listings
-- Help and documentation
+A web app was then made using Bootstrap and Fabric.js to provide a canvas for the user to draw on. Letters and digits drawn by the user would be captured and represented as a tensor. Using Tensorflow.js, the trained model could then attempt to classify the handwritten digit or letter. The model's prediction would then be appended to an input field at the top of the app, where the text could be copied or cleared.
 
-You should ask yourself: "Can I pre-render this page **ahead** of a user's request?" If the answer is yes, then you should choose Static Generation.
-
-On the other hand, Static Generation is **not** a good idea if you cannot pre-render a page ahead of a user's request. Maybe your page shows frequently updated data, and the page content changes on every request.
-
-In that case, you can use **Server-Side Rendering**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use client-side JavaScript to populate data.
+Using Tensorflow.js, model inference happens in the browser, instead of requiring a backend. This likely reduces costs, although this implementation would be unfeasible for larger models.

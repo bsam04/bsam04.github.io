@@ -1,6 +1,6 @@
 ---
 title: "TUGS"
-image: "/images/fruit-2.jpeg"
+image: "/images/TUGS.png"
 date: "2022-01-05"
 github: "https://github.com/bvsam/TUGS"
 keywords: ["PHP", "MySQL", "Bootstrap"]
