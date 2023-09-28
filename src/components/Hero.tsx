@@ -14,6 +14,9 @@ export default function Hero() {
         TOPOLOGY({
           el: vantaRef.current,
           p5,
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
           color: 0x123fff,
           backgroundColor: 0x0,
         })
