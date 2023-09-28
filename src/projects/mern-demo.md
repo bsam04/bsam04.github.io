@@ -6,6 +6,8 @@ github: "https://github.com/bvsam/mern-demo"
 keywords: ["React", "Redux", "MongoDB"]
 ---
 
-The difference is in **when** it generates the HTML for a page.
+A full stack web app that allows a user to create, read and delete goals.
 
-- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
+The frontend uses React and Redux, while the backend uses Express and MongoDB. Client side routing is done using React Router. The usage of an external MongoDB database allows for data persistence across sessions.
+
+A user is allowed to login or register for an account using an email and password. Authentication is performed using JWT tokens.
