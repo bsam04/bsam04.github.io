@@ -9,7 +9,7 @@ const projectsDirectory = path.join(process.cwd(), "src", "projects");
 type projectMetadataType = {
   title: string;
   image: string;
-  date: string;
+  priority: number;
   github: string;
   demo?: string;
   keywords: string[];

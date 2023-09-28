@@ -1,7 +1,7 @@
 ---
 title: "Quantitative AI Stock Trading Bot"
 image: "/images/rnn-trader.png"
-date: "2022-01-01"
+priority: 1
 github: "https://github.com/bvsam/rnn-trader"
 keywords: ["Keras", "Tensorflow", "scikit-learn", "React", "Typescript"]
 ---

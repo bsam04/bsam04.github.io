@@ -73,10 +73,12 @@ function ProjectCard({ projectData }: { projectData: projectDataType }) {
 }
 
 const divideArray = <T,>(array: T[], n: number): T[][] => {
-  const arrayCopy = [...array];
-  const result = [];
-  for (let i = n; i > 0; i--) {
-    result.push(arrayCopy.splice(0, Math.ceil(arrayCopy.length / i)));
+  const result: T[][] = [];
+  for (let i = 0; i < n; i++) {
+    result[i] = [];
+  }
+  for (let i = 0; i < array.length; i++) {
+    result[i % n].push(array[i]);
   }
   return result;
 };
@@ -86,6 +88,8 @@ export default async function Projects() {
   const projectData = await Promise.all(
     projectSlugs.map(async (project) => await getProjectData(project.slug))
   );
+
+  projectData.sort(({ priority: a }, { priority: b }) => a - b);
 
   const dividedProjectData = divideArray(projectData, 3);
 

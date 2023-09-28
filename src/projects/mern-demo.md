@@ -1,7 +1,7 @@
 ---
 title: "Goal Setting App"
 image: "/images/mern-demo.png"
-date: "2022-01-01"
+priority: 3
 github: "https://github.com/bvsam/mern-demo"
 keywords: ["React", "Redux", "MongoDB"]
 ---
